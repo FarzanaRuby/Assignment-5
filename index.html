@@ -105,7 +105,7 @@
                     </div>
                     <hr>
                     <div class="bg-[#F78C9C] h-[150px] w-[190px] pt-6 items-center rounded-xl mt-6 rounded-l-3xl">
-                        <h3 class="font-extrabold text-4xl text-center font2">Couple 20
+                        <h3 id="couple-cupon" class="font-extrabold text-4xl text-center font2">Couple 20
                         </h3>
 
                         <p class=" text-center text-gray-500 ">Coupon Code</p>
@@ -156,7 +156,7 @@
                     <h3 class="font1 font-semibold text-gray-400 text-3xl pl-12 ">Departure Time</h3>
                     <h3 class="font1 font-semibold text-black  text-3xl pr-12">9:00 PM</h3>
                   </div>
-                  <div class="flex gap-6  mb-16">
+                  <div class="flex gap-6 mt-16">
                     <div class="box-border border-[2px] rounded-lg bg-[#0307120C]    mt-8">
                         <h3 class="text-xl font-medium text-center ">Boarding Point - Laxmipur</h3>
                     </div>
@@ -191,18 +191,18 @@
      
            <!-- seat planning part -->
            <section class=" box-border border-t-[2px] rounded-3xl bg-[#FFFFFF] max-w-[1150px] mx-auto gap-5  mt-8 pl-8">
-         <div class="flex justify-between">
+         <div class="flex justify-between gap-10">
             <div class="">
                 <h4 class="font1 text-2xl font-semibold mt-4 text-black">Select Your Seat</h4>
-                <button class="btn text-gray-400"><img src="" alt=""></button>
-            <div class=" flex justify-between">
+                <!-- <button class="btn text-gray-400"><img src="" alt=""></button> -->
+            <div class=" flex justify-between ">
 
                 <div class="flex">
                     <span><img src="images/seat-gray.png" alt=""></span>
-                    <p>Available</p>
+                    <p class="font-medium text-xl">Available</p>
                 </div>
-                <div class="flex justify-between"><span><img src="images/seat-green-filled.png" alt=""></span>
-                    <p>Selected</p>
+                <div class="flex justify-between">
+                    <p class="font-medium text-xl">Selected</p>
                 </div>
             </div>
             <!-- <div class="tickets1"> -->
@@ -304,29 +304,29 @@
                           <thead>
                             <tr>
                             
-                              <th>Seat <button id="selected-seat"class="btn bg-green-500">2</button></th>
+                              <th>Seat <button id="selected-seat"class="btn bg-green-500">0</button></th>
                               <th>Class</th>
                               <th>Price</th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- row 1 -->
-                            <tr>
+                            <!-- <tr>
                              
                               <td>C2</td>
                               <td id="ticket-class">Economoy</td>
                               <td>550</td>
                             </tr>
-                           
+                            -->
                             <!-- row 2 -->
-                            <tr>
+                            <!-- <tr>
                                 <tr>
                              
                                     <td>C2</td>
                                     <td>Economoy</td>
                                     <td>550</td>
                                   </tr>
-                            </tr>
+                            </tr> -->
                             <!-- row 3 -->
                            
                           </tbody>
@@ -340,9 +340,9 @@
                 <h3 class="text-xl font-medium text-black">BDT <span id="total-cost">1100</span></h3>
                 
              </div>
-             <div class="join mt-5">
-                <input class="input input-bordered join-item text-xl" placeholder="Have any copupon ?">
-                <button class="btn join-item rounded-r-full bg-[#1DD100] text-xl text-white">Apply</button>
+             <div id="selected" class="join mt-5">
+                <input id="input-value" class="input input-bordered join-item text-xl" placeholder="Have any copupon ?">
+                <button id="apply-btn" class="btn join-item rounded-r-full bg-[#1DD100] text-xl text-white">Apply</button>
               </div>
           
     
@@ -361,28 +361,58 @@
                             <label class="label">
                               <span class="label-text  text-xl text-black font2 font-semibold">Passanger Name</span>
                             </label>
-                            <input type="text text-black font2 font-semibold" placeholder="Enter Your Name" class="input input-bordered" required />
+                            <input type="text text-black font2 font-semibold" placeholder="Enter Your Name" class="input input-bordered"  />
                           </div>
                           <div class="form-control">
                         
                             <label class="label">
                               <span class="label-text text-black font2 font-semibold text-xl"> Phone Number</span>
                             </label>
-                            <input type="number" placeholder="Your Phone Number" class="input input-bordered" required />
+                            <input type="number" placeholder="Your Phone Number" class="input input-bordered"required  />
                           </div>
                       <div class="form-control">
                         
                         <label class="label">
                           <span class="label-text text-black font2 font-semibold text-xl">Your Email</span>
                         </label>
-                        <input type="email" placeholder="email" class="input input-bordered" required />
+                        <input type="email" placeholder="email" class="input input-bordered" />
                       </div>
                       <div class="form-control">
                       
                           
                       </div>
                       <div class="form-control mt-6">
-                        <button class="btn btn-primary bg-[#1DD100]">Next</button>
+                        <div>
+                        <button onclick="my_modal_3.showModal()" class="btn btn-primary bg-[#1DD100] w-[300px]">Next</button>
+                        <!-- You can open the modal using ID.showModal() method -->
+
+<dialog id="my_modal_3" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 ">
+        </button>
+    </form>
+    <div id="modal"  class= '' >
+            
+      <section  class=" min-h-screen p-4 rounded-lg bg-white   z-10 ">
+          <div class=" text-white  flex flex-col justify-center items-center space-y-4 box-border  ">
+              <img src="images/success.png" alt="">
+              <h3 class="font-bold text-5xl text-green-400">Success</h3>
+              <p class="popins-font font-normal  text-black">Thank you for Booking Our Bus 
+                  We are working hard to find the best service <br> and deals for you. <br>
+                  Shortly you will find a confirmation in your email.</p>
+              <button id="last-btn" class="btn btn-active bg-green-500 rounded-lg black popins-font text-2xl font-normal ">Continue</button>
+              
+          </div>
+
+      </section>
+    
+     </div>
+    
+  </div>
+</dialog>
+                        </div>
+
                         <div class="label">
                             <span class="label-text-alt">Terms and Conditions</span>
                             <hr>
@@ -399,23 +429,8 @@
          </div>
          
            </section>
-           <!-- sucsess model part -->
-           <div>
-            <h3>Success model frame</h3>
-            <section  class=" min-h-screen p-4 rounded-lg bg-[#ffffff33] ">
-                <div class=" text-white  flex flex-col justify-center items-center space-y-4 box-border ">
-                    <img src="images/success.png" alt="">
-                    <h3 class="font-bold text-5xl text-green-400">Success</h3>
-                    <p class="popins-font font-normal  text-black">Thank you for Booking Our Bus 
-                        We are working hard to find the best service <br> and deals for you. <br>
-                        Shortly you will find a confirmation in your email.</p>
-                    <button class="btn btn-active bg-green-500 rounded-lg black popins-font text-2xl font-normal ">Continue</button>
-                    
-                </div>
-    
-            </section>
-          
-           </div>
+         
+           
     </main>
     <script src="script.js"></script>
 </body>
